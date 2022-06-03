@@ -73,15 +73,12 @@ updateDate
 ```
 
 ### 7. 기능정리
-- 댓글 (라이브러리 사용)
-- 좋아요
-- AOP 처리
-- 로그관리 (Log4j)
 - 단위테스트
+- AOP 처리
 - 배포
-- 검색
-- 프로필 사진 변경
-[사진업로드 코드](https://github.com/codingspecialist/Eazyup-Photogram/blob/master/src/main/resources/static/js/profile.js)
+- firebase fcm
+
+### 8. 추가 보완
 - 글수정
 - 회원정보 수정
 
