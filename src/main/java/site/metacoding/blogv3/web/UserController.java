@@ -20,6 +20,7 @@ import site.metacoding.blogv3.config.auth.LoginUser;
 import site.metacoding.blogv3.handler.ex.CustomApiException;
 import site.metacoding.blogv3.service.UserService;
 import site.metacoding.blogv3.util.UtilFileUpload;
+import site.metacoding.blogv3.util.UtilSysout;
 import site.metacoding.blogv3.util.UtilValid;
 import site.metacoding.blogv3.web.dto.user.JoinReqDto;
 import site.metacoding.blogv3.web.dto.user.PasswordResetReqDto;
@@ -30,6 +31,7 @@ public class UserController {
 
     private final UserService userService;
     private final HttpSession session;
+    private static final String TAG = "UserController : ";
 
     @PutMapping("/s/api/user/profile-img")
     public ResponseEntity<?> profileImgUpdate(
@@ -55,6 +57,7 @@ public class UserController {
 
     @GetMapping("/s/user/{id}")
     public String updateForm(@PathVariable Integer id) {
+
         return "/user/updateForm";
     }
 
