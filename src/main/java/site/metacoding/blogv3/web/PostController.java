@@ -6,7 +6,9 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -81,6 +83,24 @@ public class PostController {
         postService.게시글쓰기(postWriteReqDto, loginUser.getUser());
 
         return "redirect:/user/" + loginUser.getUser().getId() + "/post";
+
+        // LoginUser 테스트 시작
+        // System.out.println("====================");
+        // System.out.println(loginUser.getUsername());
+        // System.out.println(loginUser.getUser().getId());
+        // System.out.println("====================");
+
+        // PostWriteReqDto 테스트 완료!!
+        // if (postWriteReqDto.getTitle() == null) {
+        // throw new NullPointerException("title이 없습니다");
+        // }
+        // if (postWriteReqDto.getContent() == null) {
+        // throw new NullPointerException("content가 없습니다");
+        // }
+        // if (postWriteReqDto.getCategoryId() == null) {
+        // throw new NullPointerException("categoryId가 없습니다");
+        // }
+        // return "1";
     }
 
     @GetMapping("/s/post/write-form")
